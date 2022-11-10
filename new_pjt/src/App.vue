@@ -14,7 +14,7 @@
     <div v-if="clicked">
       <VideoList/>
     </div>
-    <div v-if="clicked">
+    <div v-if="videoId">
       <VideoArticle/>
     </div>
     
@@ -35,6 +35,11 @@ export default {
     return {
       search: '',
       clicked : false
+    }
+  },
+  computed: {
+    videoId() {
+      return this.$store.state.videoId
     }
   },
   methods: {
