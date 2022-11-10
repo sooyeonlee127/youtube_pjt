@@ -1,8 +1,5 @@
 <template>
     <div class="container">
-      <div>
-        <h1 class="text-primary">SSAFY TUBE</h1>
-      </div>
       <section v-if="isSelectedVideo" class="mt-4">
         <div class="ratio ratio-16x9">
           <iframe :src="videoSrc" frameborder="0"></iframe>
@@ -23,14 +20,17 @@
   const API_KEY = 'AIzaSyDNA1XX0lkSwTF_ps6UJAuDMbsFmNakoeE'
   
   export default {
-    name: 'Article',
+    name: 'ArticleVideo',
+    props: {
+      search: String,
+    },
     created() {
       axios.get(API_URL, {
           params: {
               key: API_KEY,
               type: 'video',
               part: 'snippet',
-              q: '엔시티드림'
+              q: this.search
           }
       }).then((response) => {
           this.videos = response.data.items
