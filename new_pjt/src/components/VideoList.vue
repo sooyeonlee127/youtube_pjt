@@ -15,7 +15,7 @@ import VideoListItem from '@/components/VideoListItem'
 import axios from 'axios'
 
 const API_URL = 'https://www.googleapis.com/youtube/v3/search'
-const API_KEY = 'AIzaSyAHtW8BdF8asaYWQDe8o4Ggg5Tfu2k8m5U'
+const API_KEY = ''
 
 export default {
   name: 'VideoList',
