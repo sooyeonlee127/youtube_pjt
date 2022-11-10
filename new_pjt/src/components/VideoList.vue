@@ -1,11 +1,13 @@
 <template>
   <div>
     <h1>VideoList</h1>
-    <VideoListItem
-      v-for="(video, index) in this.videos"
-      :key="`video-${index}`"
-      :video="video"
-    />
+    <ul class="list-group list-group">
+      <VideoListItem
+        v-for="(video, index) in this.videos"
+        :key="`video-${index}`"
+        :video="video"
+      />
+    </ul>
   </div>
 </template>
 
@@ -45,5 +47,13 @@ export default {
 </script>
 
 <style>
-
+  ul {
+    overflow: hidden;
+  }
+  li {
+    cursor: pointer;
+  }
+  li:hover {
+    background-color: rgb(247, 247, 247);
+  }
 </style>

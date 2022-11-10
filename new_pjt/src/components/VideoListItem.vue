@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <li 
-    @click="SelectedVideo"
-    :class="{ 'is-selected': video.selected }"
-    >
-    <img :src="`${video.snippet.thumbnails.default.url}`" >
-    <p>{{ video.snippet.title }}</p>
-    </li>
-    
-  </div>
+  <li @click="SelectedVideo"
+    class="list-group-item d-flex justify-content-start m-0 p-0"
+    :class="{ 'is-selected': this.$store.state.videoId }">
+    <div>
+      <img :src="`${video.snippet.thumbnails.default.url}`" >
+    </div>
+    <p class="px-3 py-2">{{ video.snippet.title }}</p>
+  </li>
 </template>
 
 <script>
@@ -20,8 +18,6 @@ export default {
     methods : {
       SelectedVideo() {
         this.$store.dispatch('SelectedVideo', this.video)
-        
-
       }
     },
 }
@@ -29,6 +25,7 @@ export default {
 
 <style>
   .is-selected {
-    background-color: lightgrey;
+    background-color: grey;
   }
+
 </style>
