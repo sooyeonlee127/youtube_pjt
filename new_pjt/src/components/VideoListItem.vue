@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>VideoListItem</h1>
-    {{ keyWord }}
+    {{ key }}
   </div>
 </template>
 

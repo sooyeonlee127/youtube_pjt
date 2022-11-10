@@ -4,8 +4,12 @@
       <h1 class="text-primary">SSAFY TUBE</h1>
     </div>
     <div>
-      <input type="text" id="search" v-model="search">
-      <button @click="sendSearch" variant="outline-primary">search</button>
+      <b-input-group class="mt-3">
+        <b-form-input id="search" v-model="search"></b-form-input>
+        <b-input-group-append>
+          <b-button variant="info" @click="sendSearch">Button</b-button>
+        </b-input-group-append>
+      </b-input-group>
     </div>
     <div v-if="clicked">
       <VideoList/>
