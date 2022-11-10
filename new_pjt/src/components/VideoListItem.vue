@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>VideoListItem</h1>
-    <!-- <li 
+    <li 
     @click="SelectedVideo"
     :class="{ 'is-selected': video.selected }"
     >
-    <img :src="video.snippet" width="100px" height="100px">
-    </li> -->
-    {{ video }}
+    <img :src="`${video.snippet.thumbnails.default.url}`" >
+    <p>{{ video.snippet.title }}</p>
+    </li>
+    
   </div>
 </template>
 
@@ -20,6 +20,8 @@ export default {
     methods : {
       SelectedVideo() {
         this.$store.dispatch('SelectedVideo', this.video)
+        
+
       }
     },
 }
