@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>VideoList</h1>
-    <ul class="list-group list-group">
+    <ul class="list-group list-group shadow">
       <VideoListItem
         v-for="(video, index) in this.videos"
         :key="`video-${index}`"

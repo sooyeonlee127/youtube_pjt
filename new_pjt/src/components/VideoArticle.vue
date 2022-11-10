@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <h1>article</h1>
     <section class="mt-4">
       <div class="ratio ratio-16x9">
         <iframe :src="videoUrl" frameborder="0"></iframe>
@@ -24,9 +23,12 @@ export default {
     videoUrl() {
         const Url = "https://youtube.com/embed/"
         return Url + this.videoSrc.id.videoId
+    },
+    videoId() {
+      return this.$store.state.videoId
     }
+  },
   }
-}
 </script>
 
 
