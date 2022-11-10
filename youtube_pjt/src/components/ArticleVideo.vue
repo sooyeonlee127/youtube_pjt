@@ -17,7 +17,7 @@
   // import _ from 'lodash'
   
   const API_URL = 'https://www.googleapis.com/youtube/v3/search'
-  const API_KEY = 'AIzaSyDNA1XX0lkSwTF_ps6UJAuDMbsFmNakoeE'
+  const API_KEY = ''
   
   export default {
     name: 'ArticleVideo',
