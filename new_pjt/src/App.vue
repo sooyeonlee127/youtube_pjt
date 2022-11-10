@@ -1,7 +1,19 @@
 <template>
   <div id="app">
-    <VideoArticle/>
-    <VideoList/>
+    <div>
+      <h1 class="text-primary">SSAFY TUBE</h1>
+    </div>
+    <div>
+      <input type="text" id="search" v-model="search">
+      <button @click="sendSearch" variant="outline-primary">search</button>
+    </div>
+    <div v-if="clicked">
+      <VideoList/>
+    </div>
+    <div v-if="clicked">
+      <VideoArticle/>
+    </div>
+    
   </div>
 </template>
 
@@ -14,6 +26,18 @@ export default {
   components: {
     VideoArticle,
     VideoList,
+  },
+  data() {
+    return {
+      search: '',
+      clicked : false
+    }
+  },
+  methods: {
+    sendSearch() {
+      this.clicked = true
+      this.$store.dispatch('sendSearch', this.search)
+    }
   }
 }
 </script>
